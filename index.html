@@ -168,10 +168,10 @@ description: Insheera creates high-quality, ad-free mobile apps including Islami
         </div>
       </div>
 
-      <!-- Contact Form (Formspree) -->
+      <!-- Contact Form (mailto) -->
       <div class="contact-form-widget">
         <h3 class="contact-form-title">Send us a Message</h3>
-        <form action="https://formspree.io/f/yourFormId" method="POST">
+        <form id="contact-form" data-email="{{ site.email }}" novalidate>
           <label for="contact-name">Name</label>
           <input class="contact-form-name" id="contact-name" name="name" size="30" type="text" autocomplete="name">
 
@@ -181,16 +181,16 @@ description: Insheera creates high-quality, ad-free mobile apps including Islami
           <label for="contact-message">Message *</label>
           <textarea class="contact-form-email-message" cols="25" id="contact-message" name="message" rows="5" required></textarea>
 
-          <input type="hidden" name="_subject" value="New message from inshirai.github.io">
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-          <input class="contact-form-button contact-form-button-submit" type="submit" value="Send">
+          <input class="contact-form-button contact-form-button-submit" type="submit" value="Open Email App">
 
           <div style="text-align: center; max-width: 222px; width: 100%">
             <p class="contact-form-error-message" id="contact-form-error-message"></p>
             <p class="contact-form-success-message" id="contact-form-success-message"></p>
           </div>
         </form>
+        <p style="text-align: center; margin-top: 15px; font-size: 14px;">
+          Or email us directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </p>
       </div>
     </div>
   </div>

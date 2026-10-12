@@ -90,28 +90,64 @@ if (header) {
   });
 }
 
-// Form validation
-document.querySelectorAll('form').forEach((form) => {
-  form.addEventListener('submit', function (e) {
-    const requiredFields = form.querySelectorAll('[required]');
-    let isValid = true;
+// Contact form (mailto) — opens the visitor's email client with a prefilled message
+const contactForm = document.getElementById('contact-form');
 
-    requiredFields.forEach((field) => {
+if (contactForm) {
+  const errorMessage = document.getElementById('contact-form-error-message');
+  const successMessage = document.getElementById('contact-form-success-message');
+  const toEmail = contactForm.dataset.email || 'info.insheera@gmail.com';
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (errorMessage) errorMessage.textContent = '';
+    if (successMessage) successMessage.textContent = '';
+
+    let isValid = true;
+    contactForm.querySelectorAll('[required]').forEach((field) => {
       if (!field.value.trim()) {
         isValid = false;
         field.style.borderColor = '#e74c3c';
-        field.placeholder = 'This field is required';
       } else {
         field.style.borderColor = '';
       }
     });
 
     if (!isValid) {
-      e.preventDefault();
-      alert('Please fill in all required fields.');
+      if (errorMessage) errorMessage.textContent = 'Please fill in all required fields.';
+      return;
+    }
+
+    const nameField = document.getElementById('contact-name');
+    const emailField = document.getElementById('contact-email');
+    const messageField = document.getElementById('contact-message');
+
+    const name = nameField ? nameField.value.trim() : '';
+    const email = emailField ? emailField.value.trim() : '';
+    const message = messageField ? messageField.value.trim() : '';
+
+    const subject = name ? 'Website contact from ' + name : 'Website contact';
+    const bodyLines = [];
+    if (name) bodyLines.push('Name: ' + name);
+    if (email) bodyLines.push('Email: ' + email);
+    bodyLines.push('', message);
+
+    const mailtoUrl =
+      'mailto:' +
+      toEmail +
+      '?subject=' +
+      encodeURIComponent(subject) +
+      '&body=' +
+      encodeURIComponent(bodyLines.join('\n'));
+
+    window.location.href = mailtoUrl;
+
+    if (successMessage) {
+      successMessage.textContent = 'Opening your email app...';
     }
   });
-});
+}
 
 // Lazy loading for images
 if ('IntersectionObserver' in window) {
