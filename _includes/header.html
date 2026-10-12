@@ -1,0 +1,19 @@
+<header class="site-header" role="banner">
+  <div class="header-container">
+    <a class="logo" href="{{ '/' | relative_url }}" rel="home">
+      <img alt="Insheera Logo" src="{{ site.logo }}">
+      Insheera
+    </a>
+
+    <nav class="main-nav" role="navigation">
+      <a href="{{ '/' | relative_url }}#home">Home</a>
+      <a href="{{ '/' | relative_url }}#apps">Apps</a>
+      <a href="{{ '/' | relative_url }}#about">About</a>
+      <a href="{{ '/' | relative_url }}#contact">Contact</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" type="button" aria-label="Toggle dark mode">&#127769;</button>
+    </nav>
+
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" type="button" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</header>

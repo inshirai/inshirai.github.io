@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+{% include head.html %}
+<body class="{% if page.url == '/' %}index{% else %}{{ page.layout }}{% endif %}">
+  {% include header.html %}
+
+  {% if page.url != '/' %}
+  <nav aria-label="Breadcrumb" class="breadcrumb" role="navigation">
+    <ol class="breadcrumb-list" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="{{ '/' | relative_url }}" itemprop="item">
+          <span itemprop="name">Home</span>
+        </a>
+        <meta content="1" itemprop="position">
+      </li>
+      {% if page.title and page.url != '/blog/' %}
+      <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop="name">{{ page.title }}</span>
+        <meta content="2" itemprop="position">
+      </li>
+      {% endif %}
+    </ol>
+  </nav>
+  {% endif %}
+
+  <main id="main" role="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <script src="{{ '/assets/js/script.js' | relative_url }}" defer></script>
+  {% if page.layout == 'post' %}{% include schema-post.html %}{% endif %}
+</body>
+</html>
