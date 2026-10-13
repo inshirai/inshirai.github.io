@@ -11,8 +11,8 @@
   <!-- SEO Meta Tags -->
   {%- if page.url == "/" -%}
     <title>{{ site.title }} - Quality Apps for Everyone</title>
-    <meta name="description" content="Insheera creates high-quality, ad-free mobile apps including Islamic tools like Al Muslim (Quran, Hadith, Prayer Times) and general productivity apps. Simple, smooth, and free for everyone.">
-    <meta name="keywords" content="Insheera, free mobile apps, ad-free apps, Al Muslim, Qibla Compass, Quran, Hadith, Hadis, Prayer Times, Tasbih, Islamic Calendar, Azan, Qibla Direction, Muslim apps, Islamic tools, Ramadan, Duas, iOS, Android, productivity tools, file sharing, task manager">
+    <meta name="description" content="Inshira creates high-quality, ad-free mobile apps including Islamic tools like Al Muslim (Quran, Hadith, Prayer Times) and general productivity apps. Simple, smooth, and free for everyone.">
+    <meta name="keywords" content="Inshira, free mobile apps, ad-free apps, Al Muslim, Qibla Compass, Quran, Hadith, Hadis, Prayer Times, Tasbih, Islamic Calendar, Azan, Qibla Direction, Muslim apps, Islamic tools, Ramadan, Duas, iOS, Android, productivity tools, file sharing, task manager">
   {%- else -%}
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
@@ -29,13 +29,13 @@
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{{ social_title }} - Quality Apps for Everyone">
-  <meta property="og:description" content="Insheera builds smooth, ad-free mobile apps — from Islamic tools like Al Muslim and Qibla Compass to productivity utilities like file sharing and task managers. Quality apps for everyone, everywhere.">
+  <meta property="og:description" content="Inshira builds smooth, ad-free mobile apps — from Islamic tools like Al Muslim and Qibla Compass to productivity utilities like file sharing and task managers. Quality apps for everyone, everywhere.">
   <meta property="og:image" content="{{ page.image | default: site.banner }}">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ social_title }} - Quality Apps for Everyone">
-  <meta name="twitter:description" content="Insheera creates high-quality, ad-free mobile apps — including Quran, Hadith, prayer times, as well as everyday tools. Designed for users worldwide.">
+  <meta name="twitter:description" content="Inshira creates high-quality, ad-free mobile apps — including Quran, Hadith, prayer times, as well as everyday tools. Designed for users worldwide.">
   <meta name="twitter:image" content="{{ page.image | default: site.banner }}">
 
   <!-- JSON-LD Structured Data -->
@@ -43,8 +43,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Insheera",
-    "description": "Insheera builds high-quality, ad-free Islamic and productivity apps \u2014 including Quran, Hadith, prayer times, Qibla direction, and file sharing tools.",
+    "name": "Inshira",
+    "description": "Inshira builds high-quality, ad-free Islamic and productivity apps \u2014 including Quran, Hadith, prayer times, Qibla direction, and file sharing tools.",
     "url": "{{ site.url }}",
     "logo": "{{ site.logo_200x80 }}",
     "sameAs": [

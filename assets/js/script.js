@@ -96,7 +96,7 @@ const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   const errorMessage = document.getElementById('contact-form-error-message');
   const successMessage = document.getElementById('contact-form-success-message');
-  const toEmail = contactForm.dataset.email || 'info.insheera@gmail.com';
+  const toEmail = contactForm.dataset.email || 'ask.inshira@gmail.com';
 
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();

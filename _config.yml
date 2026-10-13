@@ -1,13 +1,13 @@
-title: Insheera
+title: Inshira
 description: >-
-  Insheera creates high-quality, ad-free mobile apps including Islamic tools like
+  Inshira creates high-quality, ad-free mobile apps including Islamic tools like
   Al Muslim (Quran, Hadith, Prayer Times) and general productivity apps. Simple,
   smooth, and free for everyone.
 url: "https://inshirai.github.io"
 baseurl: ""
 lang: en
-author: Insheera
-email: info.insheera@gmail.com
+author: Inshira
+email: ask.inshira@gmail.com
 
 # Branding / assets
 logo: https://raw.githubusercontent.com/insheera/insheera/main/assets/insheera_512x512.svg
@@ -24,7 +24,6 @@ paginate_path: "/blog/page/:num/"
 
 markdown: kramdown
 exclude:
-  - inshira.xml
   - Gemfile
   - Gemfile.lock
   - vendor
@@ -40,4 +39,4 @@ defaults:
       type: posts
     values:
       layout: post
-      author: Insheera
+      author: Inshira
